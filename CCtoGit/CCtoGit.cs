@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+using log4net;
+using log4net.Config;
+
 namespace CCtoGit
 {
   public class CCtoGit
@@ -20,6 +23,9 @@ namespace CCtoGit
     private static void Clone(string absVobPath, string absRepoPath)
     {
       Console.WriteLine(absVobPath + " 를 " + absRepoPath + " 로 이전합니다.");
+
+      new Git.Init(absRepoPath);
+
     }
 
     private static string GetVobPath()
